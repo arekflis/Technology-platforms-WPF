@@ -1,0 +1,54 @@
+﻿<Window x:Class="Lab11.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab11"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel>
+            <DockPanel>
+                <TextBlock Margin="10">K</TextBlock>
+                <TextBox x:Name="KTextBox" Margin="10" Width="100" HorizontalAlignment="Left"></TextBox>
+                <Button x:Name="TasksButton" Width="100" Margin="2, 0, 0, 0" Height="30" Click="TasksButton_Click">Tasks</Button>
+                <TextBox x:Name="TasksResultTextBox" Margin="10" Width="100" HorizontalAlignment="Left" IsReadOnly="True" Height="20">None</TextBox>
+            </DockPanel>
+            <DockPanel>
+                <TextBlock Margin="10">N</TextBlock>
+                <TextBox x:Name="NtextBox" Margin="10" Width="100" HorizontalAlignment="Left"></TextBox>
+                <Button x:Name="DelegatesButton" Width="100" Height="30" Click="DelegatesButton_Click">Delegates</Button>
+                <TextBox x:Name="DelegatesResultTextBox" Margin="10" Width="100" HorizontalAlignment="Left" IsReadOnly="True" Height="20">None</TextBox>
+            </DockPanel>
+            <DockPanel>
+                <Button x:Name="AsyncButton" Width="100" Height="30" Margin="70, 10, 10, 10" Click="AsyncButton_Click">Async/Await</Button>
+                <TextBox x:Name="AsyncResultTextBox" Margin="30, 10, 10, 10" Width="100" HorizontalAlignment="Left" IsReadOnly="True" Height="20">None</TextBox>
+            </DockPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1">
+            <DockPanel>
+                <TextBlock Margin="50, 10, 10, 10">i</TextBlock>
+                <TextBox x:Name="ITextBox" Margin="10" Width="100" HorizontalAlignment="Left"></TextBox>
+            </DockPanel>
+            <DockPanel>
+                <Button x:Name="FibonacciButton" Width="100" Margin="2, 0, 0, 0" Height="30" Click="FibonacciButton_Click">Fibonacci</Button>
+                <TextBox x:Name="FibonacciTextBox" Margin="10" Width="100" HorizontalAlignment="Left" IsReadOnly="True" Height="20">None</TextBox>
+                <Button x:Name="CompressButton" Width="100" Margin="40, 0, 0, 0" Height="30" HorizontalAlignment="Left" Click="CompressButton_Click">Compress</Button>
+            </DockPanel>
+            <DockPanel>
+                <ProgressBar x:Name="FibonacciProgressBar" Width="100" Height="20" Margin=" 70, 10, 10, 10" HorizontalAlignment="Left"></ProgressBar>
+            </DockPanel>
+        </StackPanel>
+    </Grid>
+</Window>

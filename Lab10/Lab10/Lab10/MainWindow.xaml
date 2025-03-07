@@ -1,0 +1,70 @@
+﻿<Window x:Class="Lab10.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab10"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="6*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel>
+                <TextBox x:Name="CarModelTextBox" Margin="10, 35, 10, 10" Width="150" >Car Model</TextBox>
+                <TextBox x:Name="YearTextBox" Margin="10" Width="150">Year Production</TextBox>
+                <TextBox x:Name="EngineModelTextBox" Margin="10" Width="150">Engine Model</TextBox>
+                <TextBox x:Name="HPTextBox" Margin="10" Width="150">Engine Horse Power</TextBox>
+                <TextBox x:Name="DisplacementTextBox" Margin="10" Width="150">Engine Displacement</TextBox>
+                <Button Margin="20"  Width="120" Click="AddButton_Click">Add new Car</Button>
+
+                <ToolBar Width="120" Header="Find elements" FontSize="13" Height="25" Margin="10">
+
+                    <Menu Width="200">
+                        <StackPanel>
+                            <ComboBox x:Name="FindComboBox" Width="160" Margin="5"></ComboBox>
+                            <TextBox x:Name="FindTextBox" Width="160" Margin="5">Enter value</TextBox>
+                            <Button x:Name="FindButton" Width="160" Margin="5" Click="FindButton_Click">Find elements</Button>
+                            <ComboBox x:Name="ResultComboBox" Width="160" Margin="5"></ComboBox>
+                        </StackPanel>
+                    </Menu>
+                    
+                </ToolBar>
+                    
+                
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <TextBox x:Name="CarModelEditBox" Margin="10, 35, 10, 10" Width="150" >Car Model</TextBox>
+                <TextBox x:Name="YearEditBox" Margin="10" Width="150">Year Production</TextBox>
+                <TextBox x:Name="EngineModelEditBox" Margin="10" Width="150">Engine Model</TextBox>
+                <TextBox x:Name="HPEditBox" Margin="10" Width="150">Engine Horse Power</TextBox>
+                <TextBox x:Name="DisplacementEditBox" Margin="10" Width="150">Engine Displacement</TextBox>
+                <ComboBox x:Name="EditComboBox" Height="30" Width="150" Margin="10,10,10,10" SelectionChanged="EditBox_SelectionChanged"></ComboBox>
+                <Button Margin="20"  Width="120" Click="EditButton_Click">Edit Car</Button>
+            </StackPanel>
+            <StackPanel Grid.Row="1">
+                <TextBlock Margin="20, 15, 5, 5" FontSize="15">Select car to delete:</TextBlock>
+                <ComboBox x:Name="DeleteComboBox" Height="30" Width="150" Margin="10,10,10,10" SelectionChanged="ComboBox_SelectionChanged"></ComboBox>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="1">
+                <TextBlock Margin="16, 15, 5, 5" FontSize="15">Select column to sort:</TextBlock>
+                <ComboBox x:Name="SortComboBox" Height="30" Width="150" Margin="10,10,10,10" SelectionChanged="SortComboBox_SelectionChanged"></ComboBox>
+            </StackPanel>
+
+        </Grid>
+        <DataGrid x:Name="carsGrid" AutoGenerateColumns="False" Margin="15, 30, 15, 30" AlternatingRowBackground="Gray" CanUserAddRows="True"/>
+    </Grid>
+
+    
+</Window>

@@ -1,0 +1,21 @@
+﻿<Window x:Class="Lab8.ErrorNameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab8"
+        mc:Ignorable="d"
+        Title="ErrorNameWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock HorizontalAlignment="Center" FontSize="30" FontWeight="Bold">Error!</TextBlock>
+            <TextBlock FontSize="30" FontWeight="Bold">Incorrect name!</TextBlock>
+        </StackPanel>
+        <Button Grid.Row="1" Width="100" Height="30" Click="Ok_Click">OK</Button>
+        
+        </Grid>
+</Window>
